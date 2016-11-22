@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>TRSQ Config</title>
+	
+	<script type="text/javascript">
+		const {remote} = require('electron');
+		const {app} = remote
+		var fileref=document.createElement("link")
+		fileref.setAttribute("rel", "stylesheet")
+		fileref.setAttribute("type", "text/css")
+		fileref.setAttribute("href", app.getAppPath()+"/dist/css/bootstrap.min.css")
+		//require(app.getAppPath()+"/dist/js/all.min.js");
+		var head  = document.getElementsByTagName('head')[0];
+		head.appendChild(fileref);
+	</script>
+	<style type="text/css">
+		body.live{
+			color: #eee;
+			background-color: #484848;
+		}
+		body.live .btn-default{
+			background-color: #8c8c8c;
+			border-color: #e6e6e6;
+    		color: #e6e6e6;
+		}
+		body.live .midiCC,
+		body.live .midiCC [class*="col-"]:not(:last-child){
+			border-color : #e6e6e6;
+		}
+		.btn.active.focus, 
+		.btn.active:focus, 
+		.btn.focus, 
+		.btn:active.focus, 
+		.btn:active:focus, 
+		.btn:focus {
+			outline: 0;
+		}
+		.midiCC{
+			border: solid 1px #484848;
+		}
+		.midiCC [class*="col-"]{
+			height: 200px;
+		}
+		.midiCC [class*="col-"]:not(:last-child){
+			border-right: solid 1px #484848;
+		}
+		.fileContainer{
+			height: 200px;
+		}
+		.fileContainerWrapper{
+			overflow: scroll;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div id="navbar">
+				<div class="nav navbar-nav navbar-right btn-group">
+					<button class="btn btn-default btn-lg" id="liveBtn">Live</button>
+					<button class="btn btn-default btn-lg">Sync</button>
+				</div>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
+
+	<div class="container">
+		<section>
+			<div class="row">
+				<div class="midiCC col-xs-12">
+					<div class="col-xs-1">			
+						CC1
+					</div>
+					<div class="col-xs-9 fileContainerWrapper">			
+						<div class="row fileContainer">
+							
+							
+						</div>
+					</div>
+					<div class="col-xs-2">			
+						Button
+					</div>
+				</div>
+			</div><!--/.col-xs-6.col-lg-4-->
+         </section>
+         <hr>
+         <div class="row">
+			<div class="col-xs-12">
+				<a class="btn btn-default btn-lg" href="#" role="button">Add Midi Control</a>
+			</div><!--/.col-xs-6.col-lg-4-->
+          </div><!--/row-->
+	</div>
+	<script type="text/javascript">require("./index.js")</script>
+</body>
+</html>
